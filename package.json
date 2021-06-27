@@ -1,0 +1,22 @@
+{
+  "name": "quorra",
+  "version": "1.0.0",
+  "description": "master",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WTRCodeBear/WTRDiscordBots.git"
+  },
+  "author": "TheCodeBear",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WTRCodeBear/WTRDiscordBots/issues"
+  },
+  "homepage": "https://github.com/WTRCodeBear/WTRDiscordBots#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
