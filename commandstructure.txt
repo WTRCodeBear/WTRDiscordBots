@@ -1,0 +1,33 @@
+// Commands Handler
+// change 
+
+client.on('message', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+
+    if (command === 'status') {
+       client.commands.get('status').execute(message, args);
+
+    } else if (command === 'kick'){
+        client.commands.get('kick').execute(message, args);
+    }
+
+});
+
+
+
+
+
+
+// THIS IS THE ./commands/ FOLDER .js files for the commands
+
+module.exports = {
+    name: 'status',
+    description: "this is a ping command!",
+    execute(message, args){
+        message.channel.send('Open for Business!');
+    }
+}
