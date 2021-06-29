@@ -3,7 +3,7 @@
 // ARMAG1DE0N & TheCodeBear
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'your token here';
+const token = 'ODU4Nzk0MjU4Njc2MTg3MTg2.YNjUeg.w3nwBxsQotj6klrdtSm9aJnYXE8';
 const prefix = '$';
 const fs = require('fs');
 
@@ -22,18 +22,33 @@ client.once('ready', () => {
 // Basic Command Handler
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-
-
     if (command === 'status') {
-       client.commands.get('status').execute(message, args);
+        client.commands.get('status').execute(message, args);
+    } else if (command === 'palp') {
+        client.commands.get('palp').execute(message, args);
+    } else if (command === 'mace') {
+        client.commands.get('mace').execute(message, args);
+    } else if (command === '123') {
+        client.commands.get('123').execute(message, args);
+    } else if (command === 'kick') {
+        if (!message.mentions.users.size) {
+            return message.reply('you need to tag a user in order to kick them!');
+        }
+        const taggedUser = message.mentions.users.first();
+        message.channel.send(`You wanted to kick: ${taggedUser.username}`);
+        const member = message.mentions.members.first();
+        member.kick();
 
-    } else if (command === 'kick'){
-        client.commands.get('kick').execute(message, args);
+        process.on('unhandledRejection', error => 
+            console.error('Unhandled promise rejection:', error));
+
+    } else if (message.content === `${prefix}server`) {
+        message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+    } else if (message.content === `${prefix}user-info`) {
+        message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     }
-
 });
 
 // MUST GO AT END
