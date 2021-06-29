@@ -3,10 +3,10 @@
 // ARMAG1DE0N & TheCodeBear
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'yourtokenhere';
-const prefix = '$';
+const Keyv = require('keyv');
+const config = require('./config.json');
 const fs = require('fs');
-
+const globalPrefix = config.prefix;
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
@@ -37,7 +37,7 @@ client.on('message', message => {
             return message.reply('you need to tag a user in order to kick them!');
         }
         const taggedUser = message.mentions.users.first();
-        message.channel.send(`You wanted to kick: ${taggedUser.username}`);
+        message.channel.send(`BOOM GONE BITCH: ${taggedUser.username}`);
         const member = message.mentions.members.first();
         member.kick();
 
@@ -53,4 +53,4 @@ client.on('message', message => {
 
 // MUST GO AT END
 // for bot to function this token needs to be at the end of the program
-client.login(token);
+client.login(config.token);

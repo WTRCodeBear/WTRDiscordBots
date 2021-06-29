@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/WTRCodeBear/WTRDiscordBots#readme",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "keyv": "^4.0.3"
   }
 }
