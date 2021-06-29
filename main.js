@@ -3,7 +3,7 @@
 // ARMAG1DE0N & TheCodeBear
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'ODU4Nzk0MjU4Njc2MTg3MTg2.YNjUeg.w3nwBxsQotj6klrdtSm9aJnYXE8';
+const token = 'yourtokenhere';
 const prefix = '$';
 const fs = require('fs');
 
