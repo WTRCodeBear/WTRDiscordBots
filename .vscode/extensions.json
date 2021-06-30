@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "beardedbear.beardedtheme",
+        "hookyqr.beautify",
+        "dbaeumer.vscode-eslint",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "ms-toolsai.jupyter",
+        "eg2.vscode-npm-script"
+    ]
+}
