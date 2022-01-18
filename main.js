@@ -19,7 +19,7 @@ client.once('ready', () => {
     console.log('logging is NOT enabled!')
 })
 
-// Basic Command Handler
+// Command Handler *needs cleaned up*
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
